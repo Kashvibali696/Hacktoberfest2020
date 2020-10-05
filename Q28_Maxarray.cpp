@@ -1,30 +1,21 @@
 #include<iostream>
 using namespace std;
-int recursiveMaximum(int arr[],int first,int last)
-{
-    static int max=arr[first];
-    if(max<=arr[first])
-    {
-        max=arr[first];
-    }
-    if(first==last)
-    {
-        return max;
-    }
-    recursiveMinimum(arr,first+1,last);
-    return max;
-}
 int main()
 {
-    int n;
-    cout<<"Enter the size of array:";
+    int i,n;
+    int a[100];
+    cout<<"Enter total no of  elements in an arrar  : ";
     cin>>n;
-    int arr[n];
-    cout<<"Enter the elements of array:";
-    for(int i=0;i<n;i++)
+    cout<<"Enter no's  : "<<endl;
+    for(i=0;i<n;i++)
     {
-        cin>>arr[i];
+      cin>>a[i];
     }
-    int max=recursiveMaximum(arr,0,n-1);
-    cout<<"The maximum element of the array is: "<<max;
+    for(i=0;i<n;i++)
+    {
+       if(a[0]<a[i])
+           a[0]=a[i];
+    }
+    cout<<"Max element in an array : ";
+    cout<<a[i];
 }
